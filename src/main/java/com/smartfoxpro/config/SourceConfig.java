@@ -20,18 +20,15 @@ public class SourceConfig {
     @Value("${properties.numberOfThreads}")
     private int numberOfThreads;
 
-    @Value("${properties.sourceProvider}")
-    private String sourceProvider;
-
-    @Bean(name = "solrsearch")
-    @ConditionalOnProperty(prefix = "notification", name = "service")
+    @Bean
+    @ConditionalOnProperty(name = "service", havingValue = "solr")
     public SourceProvider sourceProvider() {
         return new SourceProviderImpl(numberOfThreads);
     }
 
-//    @Bean(name = "somesource")
-//    @ConditionalOnProperty(prefix = "notification", name = "service")
-//    public SourceProvider sourceAlternativeProvider()  {
-//        return new SomeNewProvider();
-//    }
+    @Bean
+    @ConditionalOnProperty(name = "service", havingValue = "somesource")
+    public SourceProvider sourceAlternativeProvider()  {
+        return new SomeNewProvider();
+    }
 }

@@ -8,7 +8,7 @@ public class SomeNewProvider implements SourceProvider{
     private static final Logger LOG = LogManager.getLogger(SomeNewProvider.class);
 
     @Override
-    public void createRequest(String url) {
+    public void createRequest(String searchElementTitle, String searchElementType) {
         LOG.info("Creating request with alternative source");
     }
 }

@@ -1,5 +1,5 @@
 package com.smartfoxpro;
 
 public interface SourceProvider {
-    public void createRequest(String url);
+    void createRequest(String searchElementTitle, String searchElementType);
 }
