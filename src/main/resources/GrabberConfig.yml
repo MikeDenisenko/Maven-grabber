@@ -1,7 +1,0 @@
-spring:
-  profiles.active: solrsearch
-
-properties:
-
-  numberOfThreads: 5
-  sourceProvider: solrsearch
